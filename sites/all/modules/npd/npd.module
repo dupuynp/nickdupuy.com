@@ -1,0 +1,47 @@
+<?php
+
+
+// Theme Template paths (tpl.php's)
+function lin_npd_theme()
+{
+  return array(
+    'submit-form' => array(
+      'template' => 'api/submit-form'
+    )
+  );
+}
+
+// Routes
+function lin_npd_menu() {
+  $items['get/news'] = array(
+        'page callback' => 'lin_npd_api_submit_form'
+     );
+     return $items;
+}
+
+function lin_npd_api_submit_form(){
+  // $page = _lin_npd_api_page_prerequisite();
+  // $html = theme('submit-form', array('page' => $page)); 
+
+  // print $html;
+  return 'test';
+}
+
+
+// Page Prep for API template
+function _lin_npd_api_page_prerequisite(){
+    global $base_url, $language; 
+    $page = array();
+    $page['language']   = $language->language;
+
+    return $page;
+}
+
+function dmp($input){
+  print "<pre>";
+  print_r($input);
+  print "</pre>";
+}
+
+
+?>

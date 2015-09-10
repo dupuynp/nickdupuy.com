@@ -1,0 +1,4 @@
+name = NPD Custom
+description = Custom Functions and UI
+core = 7.x
+package = NPD
